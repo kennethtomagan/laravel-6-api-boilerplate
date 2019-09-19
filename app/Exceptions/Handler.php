@@ -3,6 +3,10 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -46,6 +50,31 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        // return parent::render($request, $exception);
+
+        $rendered = parent::render($request, $exception);
+
+        if ($exception instanceof ValidationException) {
+            $json = [
+                'error' => $exception->validator->errors(),
+                'status_code' => $rendered->getStatusCode()
+            ];
+        } elseif ($exception instanceof AuthorizationException) {
+            $json = [
+                'error' => 'You are not allowed to do this action.',
+                'status_code' => 403
+            ];
+        }
+        else {
+            // Default to vague error to avoid revealing sensitive information
+            $json = [
+                'error' => (app()->environment() !== 'production')
+                    ? $exception->getMessage()
+                    : 'An error has occurred.',
+                'status_code' => $exception->getCode()
+            ];
+        }
+
+        return response()->json($json, $rendered->getStatusCode());
     }
 }
