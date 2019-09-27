@@ -45,11 +45,13 @@ $ php artisan migrate:fresh --seed
 
 ## Route API Endpoint
 
-| Verb     |       URI                  |  Action    |      Controller      |      Notes                                |
-| -------- | -------------------------  | --------   |  ------------------  | ------------------------------------------
-| POST     | `api/v1/auth`              |  login     |  AuthController      | to do the login and get your access token
-| POST     | `api/v1/register`          |  register  |  RegisterController  | to create a new user into your application
-| POST     | `api/v1/logout`            |  logout    |  LogoutController    | to log out the user by invalidating the passed token;
-| GET      | `api/v1/profile`           |  show      |  ProfileController   | to get current user data
-| put      | `api/v1/profile`           |  update    |  ProfileController   | to update current user data
-| put      | `api/v1/profile/password`  |  update    |  ProfileController   | to update current user password
+| Verb     |       URI                  |       Controller          |      Notes                                |
+| -------- | -------------------------  | -----------------------   | ------------------------------------------
+| POST     | `api/v1/auth`              |  AuthController           | to do the login and get your access token
+| POST     | `api/v1/register`          |  RegisterController       | to create a new user into your application
+| POST     | `api/v1/recovery`          |  ForgotPasswordController | to recover your credentials;
+| POST     | `api/v1/reset`             |  ResetPasswordController  | to reset your password after the recovery;
+| POST     | `api/v1/logout`            |  LogoutController         | to log out the user by invalidating the passed token;
+| GET      | `api/v1/profile`           |  ProfileController        | to get current user data
+| PUT      | `api/v1/profile`           |  ProfileController        | to update current user data
+| PUT      | `api/v1/profile/password`  |  ProfileController        | to update current user password

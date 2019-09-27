@@ -17,9 +17,13 @@ Route::group(['prefix' => 'v1'], function () {
 
     Route::group(['namespace' => 'Auth'], function () {
 
-        Route::post('auth', ['as' => 'login', 'uses' => 'AuthController@login']);
+        Route::post('auth/login', ['as' => 'login', 'uses' => 'AuthController@login']);
 
-        Route::post('register', ['as' => 'register', 'uses' => 'RegisterController@register']);
+        Route::post('auth/register', ['as' => 'register', 'uses' => 'RegisterController@register']);
+        // Send reset password mail
+        Route::post('auth/recovery', 'ForgotPasswordController@sendPasswordResetLink');
+        // handle reset password form process
+        Route::post('auth/reset', 'ResetPasswordController@callResetPassword');
 
     });
 
@@ -34,7 +38,7 @@ Route::group(['prefix' => 'v1'], function () {
             Route::put('profile/password', ['as' => 'profile', 'uses' => 'ProfileController@updatePassword']);
 
         });
-        
+
         Route::group(['namespace' => 'Auth'], function () {
     
             Route::post('logout', ['as' => 'logout', 'uses' => 'LogoutController@logout']);
