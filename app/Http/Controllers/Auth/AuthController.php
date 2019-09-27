@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginFormRequest;
+use App\Http\Requests\Auth\LoginRequest;
 use JWTAuth;
 use App\User;
 use Carbon\Carbon;
@@ -15,11 +15,11 @@ class AuthController extends Controller
     /**
      * Login
      * 
-     * @param Request $request
+     * @param LoginRequest $request
      * @return \Illuminate\Http\JsonResponse
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function login(LoginFormRequest $request)
+    public function login(LoginRequest $request)
     {
         $user = User::where('email', $request->email)->first();
 
