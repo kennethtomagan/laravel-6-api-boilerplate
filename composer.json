@@ -13,7 +13,6 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "prettus/l5-repository": "^2.6",
         "tymon/jwt-auth": "1.0.0-rc.5"
     },
     "require-dev": {

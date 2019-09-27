@@ -13,3 +13,30 @@ It is built on top of three big guys:
 * Ready To use User Authentications
 * Users CRUD (list, create, show, update delete )
 * Json API Format response.
+
+
+
+## Installation
+
+First, clone the repo:
+```
+$ git clone https://github.com/kennethtomagan/laravel-api-boilerplate.git
+```
+#### Install dependencies
+
+```
+$ cd laravel-api-boilerplate.git
+$ composer install
+```
+
+#### Configure the Environment
+Create `.env` file:
+```
+$ cat .env.example > .env
+```
+Run `php artisan key:generate` and `php artisan jwt:secret`
+
+#### Migrations and Seed the database
+```
+$ php artisan migrate:fresh --seed
+```
