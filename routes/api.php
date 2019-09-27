@@ -34,6 +34,12 @@ Route::group(['prefix' => 'v1'], function () {
             Route::put('profile/password', ['as' => 'profile', 'uses' => 'ProfileController@updatePassword']);
 
         });
+        
+        Route::group(['namespace' => 'Auth'], function () {
+    
+            Route::post('logout', ['as' => 'logout', 'uses' => 'LogoutController@logout']);
+    
+        });
 
     });
 
