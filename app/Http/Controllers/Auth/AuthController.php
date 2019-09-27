@@ -9,6 +9,7 @@ use JWTAuth;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Hashing\BcryptHasher;
+use App\Http\Resources\User as UserResource;
 
 class AuthController extends Controller
 {
@@ -48,7 +49,8 @@ class AuthController extends Controller
             return response()->json(['error' => 'could_not_create_token'], 500);
 
         }
+        $data = new UserResource($user);
 
-        return response()->json(compact('token', 'user'));
+        return response()->json(compact('token', 'data'));
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Requests\Auth\RegisterRequest;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use JWTAuth;
+use App\Http\Resources\User as UserResource;
 
 class RegisterController extends Controller
 {
@@ -29,7 +30,9 @@ class RegisterController extends Controller
 
         $token = JWTAuth::fromUser($user);
 
-        return response()->json(compact('token', 'user'));
+        $data = new UserResource($user);
+
+        return response()->json(compact('token', 'data'));
 
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Profile\UpdateProfileRequest;
+use App\Http\Resources\User as UserResource;
 
 class ProfileController extends Controller
 {
@@ -22,7 +23,10 @@ class ProfileController extends Controller
         
         $user = Auth::user();
 
-        return response()->json(compact('user'));
+        $data = new UserResource($user);
+
+        return response()->json(compact('data'));
+
     }
 
 
@@ -41,7 +45,10 @@ class ProfileController extends Controller
 
         $user->update($request->only('name', 'email'));
 
-        return response()->json(compact('user'));
+        $data = new UserResource($user);
+
+        return response()->json(compact('data'));
+        
     }
 
      /**
@@ -64,6 +71,8 @@ class ProfileController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return response()->json(compact('user'));
+        $data = new UserResource($user);
+
+        return response()->json(compact('data'));
     }
 }
