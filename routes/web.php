@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return [
+        'app' => 'Laravel 6 API Boilerplate',
+        'version' => '1.0.0',
+    ];
 });
