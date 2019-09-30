@@ -44,6 +44,7 @@ $ php artisan migrate:fresh --seed
 
 
 ## Route API Endpoint
+* Postman API Documentation Starter Kit https://documenter.getpostman.com/view/880526/SVtN3BkG?version=latest
 
 | Verb     |                     URI                          |       Controller          |      Notes                                |
 | -------- | -----------------------------------------------  | -----------------------   | ------------------------------------------
@@ -55,3 +56,4 @@ $ php artisan migrate:fresh --seed
 | GET      | `http://localhost:8000/api/profile`           |  ProfileController        | to get current user data
 | PUT      | `http://localhost:8000/api/profile`           |  ProfileController        | to update current user data
 | PUT      | `http://localhost:8000/api/profile/password`  |  ProfileController        | to update current user password
+
