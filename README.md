@@ -1,6 +1,6 @@
 # laravel-api-boilerplate
 
-This is a boilerplate for writing RESTful API projects using Laravel. This Boilerplate is a "starter kit" you can use to build your first API in seconds. As you can easily imagine, it is built on top of the awesome Laravel Framework. This version is built on Laravel 6.0!
+This is a boilerplate for writing RESTful API projects using Laravel, a "Starter Kit" you can use to build your API in seconds.
 
 ##### Packages:
 
@@ -10,20 +10,19 @@ This is a boilerplate for writing RESTful API projects using Laravel. This Boile
 
 ## Features
 
-* Ready To use User Authentications
-* Authentication with JWT
-* Basic Features: Register, Login, Update Profile & Password
-* Json API Format response.
+* JWT Authentication
+* Basic Features: Registration, Login, Update Profile & Password
+* JSON API Format response.
 
 
 
 ## Installation
 
-First, clone the repo:
+#### Clone the Repo:
 ```
 $ git clone https://github.com/kennethtomagan/laravel-api-boilerplate.git
 ```
-#### Install dependencies
+#### Install Dependencies
 
 ```
 $ cd laravel-api-boilerplate.git
@@ -37,7 +36,7 @@ $ cat .env.example > .env
 ```
 Run `php artisan key:generate` and `php artisan jwt:secret`
 
-#### Migrations and Seed the database
+#### Migrate and Seed the Database
 ```
 $ php artisan migrate:fresh --seed
 ```
