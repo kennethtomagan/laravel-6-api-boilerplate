@@ -2,20 +2,21 @@
 
 This is a boilerplate for writing RESTful API projects using Laravel, a "Starter Kit" you can use to build your API in seconds.
 
-##### Require:
-* PHP: ^7.2
-
 ##### Packages:
 
 * JWT-Auth - [tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth)
 * Laravel-CORS [barryvdh/laravel-cors](http://github.com/barryvdh/laravel-cors)
 
+##### Require:
+* PHP: ^7.2
 
 ## Features
 
 * JWT Authentication
 * Basic Features: Registration, Login, Update Profile & Password
 * JSON API Format response.
+* Unit/Feature Testing (Soon).
+* Frontend Vue.js starter kit ready example (Soon).
 
 
 
