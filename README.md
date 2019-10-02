@@ -2,8 +2,7 @@
 
 This is a boilerplate for writing RESTful API projects using Laravel, a "Starter Kit" you can use to build your API in seconds.
 
-##### Technologies
-Require:
+##### Require:
 * PHP: ^7.2
 
 ##### Packages:
