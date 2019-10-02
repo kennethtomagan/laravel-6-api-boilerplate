@@ -2,6 +2,9 @@
 
 This is a boilerplate for writing RESTful API projects using Laravel, a "Starter Kit" you can use to build your API in seconds.
 
+##### Require:
+* PHP: ^7.2
+
 ##### Packages:
 
 * JWT-Auth - [tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth)
