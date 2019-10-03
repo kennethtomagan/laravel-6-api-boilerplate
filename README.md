@@ -21,15 +21,12 @@ This is a boilerplate for writing RESTful API projects using Laravel, a "Starter
 
 
 ## Installation
+`composer create-project kennethtomagan/laravel-6-api-boilerplate myNewProject`;
 
-#### Clone the Repo:
-```
-$ git clone https://github.com/kennethtomagan/laravel-api-boilerplate.git
-```
+
 #### Install Dependencies
 
 ```
-$ cd laravel-api-boilerplate.git
 $ composer install
 ```
 
