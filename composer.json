@@ -1,10 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "kennethtomagan/laravel-6-api-boilerplate",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "A Laravel 6 API Boilerplate to create a ready-to-use REST API. User Authentication using JWT.",
     "keywords": [
-        "framework",
-        "laravel"
+        "laravel",
+        "api",
+        "jwt",
+        "boilerplate"
     ],
     "license": "MIT",
     "require": {
