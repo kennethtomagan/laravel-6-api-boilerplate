@@ -48,11 +48,11 @@ $ php artisan migrate:fresh --seed
 
 | Verb     |                     URI                          |       Controller          |      Notes                                |
 | -------- | -----------------------------------------------  | -----------------------   | ------------------------------------------
-| POST     | `http://localhost:8000/api/auth`              |  AuthController           | to do the login and get your access token
-| POST     | `http://localhost:8000/api/register`          |  RegisterController       | to create a new user into your application
-| POST     | `http://localhost:8000/api/recovery`          |  ForgotPasswordController | to recover your credentials;
-| POST     | `http://localhost:8000/api/reset`             |  ResetPasswordController  | to reset your password after the recovery (setup your mail credentials in `.env` file to avoid error);
-| POST     | `http://localhost:8000/api/logout`            |  LogoutController         | to log out the user by invalidating the passed token;
+| POST     | `http://localhost:8000/api/auth/login`              |  AuthController           | to do the login and get your access token
+| POST     | `http://localhost:8000/api/auth/register`          |  RegisterController       | to create a new user into your application
+| POST     | `http://localhost:8000/api/auth/recovery`          |  ForgotPasswordController | to recover your credentials;
+| POST     | `http://localhost:8000/api/auth/reset`             |  ResetPasswordController  | to reset your password after the recovery (setup your mail credentials in `.env` file to avoid error);
+| POST     | `http://localhost:8000/api/auth/logout`            |  LogoutController         | to log out the user by invalidating the passed token;
 | GET      | `http://localhost:8000/api/profile`           |  ProfileController        | to get current user data
 | PUT      | `http://localhost:8000/api/profile`           |  ProfileController        | to update current user data
 | PUT      | `http://localhost:8000/api/profile/password`  |  ProfileController        | to update current user password
