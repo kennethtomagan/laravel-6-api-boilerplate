@@ -52,7 +52,7 @@ $ php artisan migrate:fresh --seed
 | POST     | `http://localhost:8000/api/register`          |  RegisterController       | to create a new user into your application
 | POST     | `http://localhost:8000/api/recovery`          |  ForgotPasswordController | to recover your credentials;
 | POST     | `http://localhost:8000/api/reset`             |  ResetPasswordController  | to reset your password after the recovery (setup your mail credentials in `.env` file to avoid error);
-| POST     | `http://localhost:8000/api/logout`            |  LogoutController         | to log out the user by invalidating the passed token;
+| POST     | `http://localhost:8000/api/auth/logout`            |  LogoutController         | to log out the user by invalidating the passed token;
 | GET      | `http://localhost:8000/api/profile`           |  ProfileController        | to get current user data
 | PUT      | `http://localhost:8000/api/profile`           |  ProfileController        | to update current user data
 | PUT      | `http://localhost:8000/api/profile/password`  |  ProfileController        | to update current user password

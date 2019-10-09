@@ -48,7 +48,7 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
 
     Route::group(['namespace' => 'Auth'], function () {
 
-        Route::post('logout', ['as' => 'logout', 'uses' => 'LogoutController@logout']);
+        Route::post('auth/logout', ['as' => 'logout', 'uses' => 'LogoutController@logout']);
 
     });
 
