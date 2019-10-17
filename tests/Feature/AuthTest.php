@@ -69,7 +69,7 @@ class AuthTest extends TestCase
         $this->assertEquals($name, $output->data->name);
         $this->assertEquals($email, $output->data->email);
 
-        $response = $this->post('/api/logout', [], ['Authorization' => "Bearer $token"]);
+        $response = $this->post('/api/auth/logout', [], ['Authorization' => "Bearer $token"]);
         $output = json_decode($response->getContent());
         $this->assertEquals("Successfully logged out", $output->message);
     }

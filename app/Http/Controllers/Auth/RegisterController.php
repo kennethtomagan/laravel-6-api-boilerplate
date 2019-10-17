@@ -9,9 +9,11 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use JWTAuth;
 use App\Http\Resources\User as UserResource;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
+    use RegistersUsers;
     
     /**
      * Register
