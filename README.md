@@ -1,5 +1,9 @@
 # laravel-api-boilerplate
 
+[![Packagist](https://img.shields.io/packagist/v/kennethtomagan/laravel-6-api-boilerplate.svg)](https://packagist.org/packages/kennethtomagan/laravel-6-api-boilerplate)
+[![Packagist](https://poser.pugx.org/kennethtomagan/laravel-6-api-boilerplate/d/total.svg)](https://packagist.org/packages/kennethtomagan/laravel-6-api-boilerplate)
+[![Packagist](https://img.shields.io/packagist/l/kennethtomagan/laravel-6-api-boilerplate.svg)](https://packagist.org/packages/kennethtomagan/laravel-6-api-boilerplate)
+
 This is a boilerplate for writing RESTful API projects using Laravel, a "Starter Kit" you can use to build your API in seconds.
 
 ##### Packages:
