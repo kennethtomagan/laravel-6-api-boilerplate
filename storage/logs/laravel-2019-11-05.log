@@ -1,0 +1,35 @@
+[2019-11-05 09:54:25] local.ERROR: Command "queue:refresh" is not defined.
+
+Did you mean one of these?
+    migrate:fresh
+    migrate:refresh
+    queue:failed
+    queue:failed-table
+    queue:flush
+    queue:forget
+    queue:listen
+    queue:restart
+    queue:retry
+    queue:table
+    queue:work {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"queue:refresh\" is not defined.
+
+Did you mean one of these?
+    migrate:fresh
+    migrate:refresh
+    queue:failed
+    queue:failed-table
+    queue:flush
+    queue:forget
+    queue:listen
+    queue:restart
+    queue:retry
+    queue:table
+    queue:work at /home/kenneth/Sites/laravel-6-api-boilerplate/vendor/symfony/console/Application.php:646)
+[stacktrace]
+#0 /home/kenneth/Sites/laravel-6-api-boilerplate/vendor/symfony/console/Application.php(236): Symfony\\Component\\Console\\Application->find('queue:refresh')
+#1 /home/kenneth/Sites/laravel-6-api-boilerplate/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/kenneth/Sites/laravel-6-api-boilerplate/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/kenneth/Sites/laravel-6-api-boilerplate/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/kenneth/Sites/laravel-6-api-boilerplate/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
