@@ -19,8 +19,8 @@ This is a boilerplate for writing RESTful API projects using Laravel, a "Starter
 * JWT Authentication
 * Basic Features: Registration, Login, Update Profile & Password
 * JSON API Format response.
-* Unit/Feature Testing (Soon).
-* Frontend Vue.js starter kit ready example (Soon).
+* Unit/Feature Testing.
+* Frontend Vue.js starter kit ready example ( https://github.com/kennethtomagan/Vue-CLI-Boilerplate ).
 
 
 
