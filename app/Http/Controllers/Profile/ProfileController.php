@@ -22,9 +22,10 @@ class ProfileController extends Controller
      */
     public function me(Request $request)
     {
-        
+        // Get data of Logged user
         $user = Auth::user();
 
+        // transform user data
         $data = new UserResource($user);
 
         return response()->json(compact('data'));
@@ -42,11 +43,13 @@ class ProfileController extends Controller
      */
     public function update(UpdateProfileRequest $request)
     {
-        
+        // Get data of Logged user
         $user = Auth::user();
 
+        // Update User
         $user->update($request->only('name', 'email'));
-
+        
+        // transform user data
         $data = new UserResource($user);
 
         return response()->json(compact('data'));
@@ -63,19 +66,22 @@ class ProfileController extends Controller
      */
     public function updatePassword(UpdatePassword $request)
     {
-
+        // Get Request User
         $user = $request->user();
 
+        // Validate user Password and Request password
         if (!Hash::check($request->current_password, $user->password)) {
-
+            // Validation failed return an error messsage
             return response()->json(['error' => 'Invalid current password'], 422);
 
         }
 
+        // Update User password
         $user->update([
             'password' =>  Hash::make($request->new_password),
         ]);
 
+        // transform user data
         $data = new UserResource($user);
 
         return response()->json(compact('data'));

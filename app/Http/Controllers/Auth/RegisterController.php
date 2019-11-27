@@ -24,14 +24,17 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request)
     {
+        // Create user data
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
+        
+        //  Generate token
         $token = JWTAuth::fromUser($user);
 
+        // Transform user data
         $data = new UserResource($user);
 
         return response()->json(compact('token', 'data'));

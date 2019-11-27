@@ -24,8 +24,10 @@ class LogoutController extends Controller
      */
     public function logout()
     {
+        // Invalidate current logged user token
         JWTAuth::invalidate(JWTAuth::getToken());
-
+        
+        // Return message
         return response()
             ->json(['message' => 'Successfully logged out']);
     }
