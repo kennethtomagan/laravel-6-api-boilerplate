@@ -22,33 +22,35 @@ class AuthController extends Controller
      */
     public function login(LoginRequest $request)
     {
+        // Get User by email
         $user = User::where('email', $request->email)->first();
 
+        // Return error message if user not found.
         if(!$user) return response()->json(['error' => 'User not found.'], 404);
 
         // Account Validation
         if (!(new BcryptHasher)->check($request->input('password'), $user->password)) {
-
+            // Return Error message if password is incorrect
             return response()->json(['error' => 'Email or password is incorrect. Authentication failed.'], 401);
         }
 
-        // Login Attempt
+        // Get email and password from Request
         $credentials = $request->only('email', 'password');
 
         try {
-
-            // JWTAuth::factory()->setTTL(40320); // Expired Time 28days
-
+            // Login Attempt
             if (! $token = JWTAuth::attempt($credentials, ['exp' => Carbon::now()->addDays(28)->timestamp])) {
-
+                // Return error message if validation failed
                 return response()->json(['error' => 'invalid_credentials'], 401);
 
             }
         } catch (JWTException $e) {
-
+            // Return Error message if cannot create token. 
             return response()->json(['error' => 'could_not_create_token'], 500);
 
         }
+        
+        // transform user data
         $data = new UserResource($user);
 
         return response()->json(compact('token', 'data'));
