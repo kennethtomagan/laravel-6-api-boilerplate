@@ -19,6 +19,6 @@
         "sass-loader": "^7.1.0"
     },
     "dependencies": {
-        "serialize-javascript": "^2.1.2"
+        "serialize-javascript": "^2.1.1"
     }
 }
