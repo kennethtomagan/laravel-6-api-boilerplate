@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\User;
 use Illuminate\Support\Facades\Hash;
-use JWTAuth;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -30,9 +29,9 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        
+
         //  Generate token
-        $token = JWTAuth::fromUser($user);
+        $token = auth()->fromUser($user);
 
         // Transform user data
         $data = new UserResource($user);

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use JWTAuth;
 
 class LogoutController extends Controller
 {
@@ -25,7 +24,7 @@ class LogoutController extends Controller
     public function logout()
     {
         // Invalidate current logged user token
-        JWTAuth::invalidate(JWTAuth::getToken());
+        auth()->logout();
         
         // Return message
         return response()

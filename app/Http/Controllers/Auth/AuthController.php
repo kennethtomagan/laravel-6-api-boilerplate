@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
-use JWTAuth;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Hashing\BcryptHasher;
@@ -39,7 +38,7 @@ class AuthController extends Controller
 
         try {
             // Login Attempt
-            if (! $token = JWTAuth::attempt($credentials, ['exp' => Carbon::now()->addDays(28)->timestamp])) {
+            if (! $token = auth()->attempt($credentials)) {
                 // Return error message if validation failed
                 return response()->json(['error' => 'invalid_credentials'], 401);
 
