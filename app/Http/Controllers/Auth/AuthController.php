@@ -27,6 +27,10 @@ class AuthController extends Controller
         // Return error message if user not found.
         if(!$user) return response()->json(['error' => 'User not found.'], 404);
 
+        // Account verification validation
+        if(config('url.account_verify')){
+            if(!$user->email_verified_at) return response()->json(['error' => 'Account must be verified'], 401);
+        }
         // Account Validation
         if (!(new BcryptHasher)->check($request->input('password'), $user->password)) {
             // Return Error message if password is incorrect

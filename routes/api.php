@@ -31,6 +31,8 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('auth/recovery', 'ForgotPasswordController@sendPasswordResetLink');
     // handle reset password form process
     Route::post('auth/reset', 'ResetPasswordController@callResetPassword');
+    // handle reset password form process
+    Route::get('auth/verify', 'VerifyAccountController@verify');
 
 });
 

@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Notifications\UserVerifyNotification;
 
 class RegisterController extends Controller
 {
@@ -35,6 +36,14 @@ class RegisterController extends Controller
 
         // Transform user data
         $data = new UserResource($user);
+
+        // Validate if user needs to verify their account
+        if(config('url.account_verify')){
+            // Email Verification
+            $user->notify(new UserVerifyNotification($token));
+
+            return response()->json(compact('data'));
+        }
 
         return response()->json(compact('token', 'data'));
 
