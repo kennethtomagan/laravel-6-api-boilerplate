@@ -7,6 +7,7 @@ use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -62,6 +63,11 @@ class Handler extends ExceptionHandler
         } elseif ($exception instanceof AuthorizationException) {
             $json = [
                 'error' => 'You are not allowed to do this action.',
+                'status_code' => 403
+            ];
+        } elseif ($exception instanceof NotFoundHttpException) {
+            $json = [
+                'error' => 'Sorry, the page you are looking for could not be found.',
                 'status_code' => 403
             ];
         }
